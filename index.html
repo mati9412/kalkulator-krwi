@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalkulator masy składników krwi</title>
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="container">
+    <h1>Kalkulator masy brutto</h1>
+
+    <label for="volume">Objętość (ml)</label>
+    <input type="number" id="volume" inputmode="decimal" placeholder="np. 450" />
+
+    <label for="component">Składnik krwi</label>
+    <select id="component">
+      <option value="kkcz">KKCZ</option>
+      <option value="osocze">Osocze</option>
+      <option value="kpk">KPK</option>
+    </select>
+
+    <button id="calcBtn">Oblicz</button>
+
+    <div id="result" class="result"></div>
+  </main>
+
+  <script src="app.js"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js");
+    }
+  </script>
+</body>
+</html>

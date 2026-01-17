@@ -1,0 +1,8 @@
+{
+  "name": "Kalkulator masy składników krwi",
+  "short_name": "KrewCalc",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#c62828"
+}
