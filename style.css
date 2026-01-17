@@ -49,3 +49,21 @@ button:active {
   font-weight: bold;
   text-align: center;
 }
+
+.cheat-sheet {
+  margin-top: 24px;
+}
+
+.cheat-sheet summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #444;
+}
+
+.cheat-sheet pre {
+  background: #f7f7f7;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  overflow-x: auto;
+}

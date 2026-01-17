@@ -1,39 +1,77 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kalkulator masy składników krwi</title>
 
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="style.css" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator masy składników krwi</title>
+
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <main class="container">
-    <h1>Kalkulator masy brutto</h1>
+    <main class="container">
+        <h1>Kalkulator masy brutto</h1>
 
-    <label for="volume">Objętość (ml)</label>
-    <input type="number" id="volume" inputmode="decimal" placeholder="np. 450" />
+        <label for="weight">Masa brutto (g)</label>
+        <input type="number" id="weight" inputmode="decimal" placeholder="np. 480" />
 
-    <label for="component">Składnik krwi</label>
-    <select id="component">
-      <option value="kkcz">KKCZ</option>
-      <option value="osocze">Osocze</option>
-      <option value="kpk">KPK</option>
-    </select>
+        <label for="component">Składnik krwi</label>
+        <select id="component">
+            <option value="kkcz">KKCZ</option>
+            <option value="osocze">Osocze</option>
+            <option value="kpk">KPK</option>
+        </select>
+        <p style="font-size: 13px; color: #666; margin-top: 8px;">
+            Wynik podawany w mililitrach (ml)
+        </p>
 
-    <button id="calcBtn">Oblicz</button>
+        <button id="calcBtn">Oblicz</button>
 
-    <div id="result" class="result"></div>
-  </main>
+        <div id="result" class="result"></div>
+        <details class="cheat-sheet">
+            <summary>📋 Normy objętości składników krwi</summary>
 
-  <script src="app.js"></script>
+            <pre>
+KPK                462–564 ml
 
-  <script>
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("sw.js");
-    }
-  </script>
+KKCZ bklp/RW       250–350 ml
+KKCZ/RW            320–420 ml
+UKKCZ/RW           220–300 ml
+
+FFP KRIO           250–320 ml
+FFP                250–320 ml
+FFP „Foki”         150–320 ml
+FFP inakt.         ≥190 ml
+FFP lecz.          250–320 ml
+Osocze >24h        150–320 ml
+
+FFP 400            360–440 ml
+FFP 600            540–660 ml
+FFP 700            630–770 ml
+FFP 800            720–880 ml
+
+FFP-Af do frakcj.  >200 ml
+
+Zł. KKP            >200 ml
+KKP i KKP/RW       220–320 ml
+
+KG                 <500 ml
+Krioprecypitat     20–30 ml
+  </pre>
+        </details>
+
+    </main>
+
+    <script src="app.js"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("sw.js");
+        }
+    </script>
 </body>
+
 </html>

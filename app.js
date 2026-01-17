@@ -1,23 +1,27 @@
-const densities = {
-  kkcz: 1.060,
-  osocze: 1.025,
-  kpk: 1.030
-};
-
 document.getElementById("calcBtn").addEventListener("click", calculate);
 
 function calculate() {
-  const volume = parseFloat(document.getElementById("volume").value);
-  const component = document.getElementById("component").value;
-  const resultEl = document.getElementById("result");
+	const weight = parseFloat(document.getElementById("weight").value);
+	const component = document.getElementById("component").value;
+	const resultEl = document.getElementById("result");
 
-  if (!volume || volume <= 0) {
-    resultEl.textContent = "Podaj prawidłową objętość.";
-    return;
-  }
+	if (!weight || weight <= 0) {
+		resultEl.textContent = "Podaj prawidłową masę w gramach.";
+		return;
+	}
 
-  const mass = volume * densities[component];
+	const volume = calculateVolume(weight, component);
 
-  resultEl.textContent =
-    `Masa brutto: ${mass.toFixed(1)} g`;
+	if (volume === null) {
+		resultEl.textContent = "Brak wzoru dla wybranego składnika.";
+		return;
+	}
+
+	resultEl.textContent = `Objętość: ${volume.toFixed(0)} ml`;
+}
+
+// ⬇️ FUNKCJA DO TWOJEJ EDYCJI
+function calculateVolume(weight, component) {
+	if (component == "kkcz") return (weight - 27) / 1.08;
+	else return null;
 }
