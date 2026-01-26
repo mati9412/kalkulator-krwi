@@ -22,6 +22,9 @@ function calculate() {
 
 // ⬇️ FUNKCJA DO TWOJEJ EDYCJI
 function calculateVolume(weight, component) {
-	if (component == "kkcz") return (weight - 27) / 1.08;
+	if (component == "kkcz") return (weight - 27) / 1.07;
+	else if (component == "osocze") return (weight - 27) / 1.03;
+	else if (component == "kozuszek") return (weight - 27) / 1.08;
+	else if (component == "kpk") return (weight - 27) / 1.06;
 	else return null;
 }
